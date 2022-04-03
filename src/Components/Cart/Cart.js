@@ -15,12 +15,18 @@ const Cart = () => {
     }, [carts]);
     return (
         <div>
-            <h2>Cart Items: {carts.length}</h2>
-            <h3>Cart Total Price: ${total}</h3>
+            <div className="cart-heading">
+                <h2>Cart Total Price: ${total}</h2>
+                <hr />
+            </div>
             <div className="products-container">
-                {carts.map((product) => (
-                    <Products key={product.id} product={product}></Products>
-                ))}
+                {carts.length === 0 ? (
+                    <h2 className="empty">Cart is empty!!!</h2>
+                ) : (
+                    carts.map((product) => (
+                        <Products key={product.id} product={product}></Products>
+                    ))
+                )}
             </div>
         </div>
     );

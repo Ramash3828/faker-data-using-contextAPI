@@ -10,10 +10,12 @@ const Products = ({ product }) => {
 
     return (
         <div className="product">
-            <img src={img} alt={name} /> <h4>Name: {name}</h4>
+            <img src={img} alt={name} />
+            <h4>Name: {name}</h4>
             <p>Price: ${price}</p>
             {carts.includes(product) ? (
                 <button
+                    className="product-btn"
                     onClick={() => {
                         setCarts(carts.filter((pd) => pd.id !== product.id));
                     }}
@@ -22,6 +24,7 @@ const Products = ({ product }) => {
                 </button>
             ) : (
                 <button
+                    className="product-btn"
                     onClick={() => {
                         setCarts([...carts, product]);
                     }}
