@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Cart from "./Components/Cart/Cart";
+import Header from "./Components/Header/Header";
+import Home from "./Components/Home/Home";
+import SpinnerLoader from "./Components/SpinnerLoader/SpinnerLoader";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Header></Header>
+            <SpinnerLoader></SpinnerLoader>
+            <Routes>
+                <Route path="/" element={<Home></Home>}></Route>
+                <Route path="/cart" element={<Cart></Cart>}></Route>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

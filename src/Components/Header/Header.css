@@ -1,0 +1,15 @@
+.header {
+    height: 60px;
+    background-color: coral;
+    color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+}
+.header a {
+    text-decoration: none;
+    font-weight: bold;
+}
